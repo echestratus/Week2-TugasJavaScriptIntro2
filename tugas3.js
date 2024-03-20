@@ -46,9 +46,8 @@ function validasi(callback) {
         dataArray.push(inputArray);
     }
     let result = callback(nilaiAwal, nilaiAkhir, dataArray);
-    if (result[0]==undefined){
-        let notFound = "Nilai tidak ditemukan";
-        return notFound;
+    if (result.length == 0){
+        return "Nilai tidak ditemukan";
     } else{
         return result;
     }
