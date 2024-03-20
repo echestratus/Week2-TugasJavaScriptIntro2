@@ -6,11 +6,8 @@ function SeleksiNilai(nilaiAwal, nilaiAkhir, dataArray) {
             result.push(i);
         }
     }
-    if (dataArray == []) {
-        return "Nilai tidak ditemukan";
-    } else {
-        return result;
-    }
+    return result;
+    
 }
 
 function validasi(callback) {
@@ -49,8 +46,12 @@ function validasi(callback) {
         dataArray.push(inputArray);
     }
     let result = callback(nilaiAwal, nilaiAkhir, dataArray);
-    return result;
-    
+    if (result[0]==undefined){
+        let notFound = "Nilai tidak ditemukan";
+        return notFound;
+    } else{
+        return result;
+    }
 }
 
 let result = validasi(SeleksiNilai);
