@@ -1,4 +1,5 @@
 function SeleksiNilai(nilaiAwal, nilaiAkhir, dataArray) {
+    //Logic untuk seleksi nilai diantara nilai awal dan akhir
     dataArray = dataArray.sort((a, b) => a - b);
     let result = [];
     for (let i of dataArray) {
@@ -15,6 +16,7 @@ function validasi(callback) {
     let nilaiAkhir;
     let jmlData;
     readlineSync = require('readline-sync');
+    //Proses input nilai awal dan nilai akhir
     do{
         console.clear();
         nilaiAwal = readlineSync.question('Masukan nilai awal:');
@@ -28,6 +30,7 @@ function validasi(callback) {
         }
         console.clear();
     }while(nilaiAwal>=nilaiAkhir || isNaN(nilaiAwal) || isNaN(nilaiAkhir));
+    //Proses input banyaknya data
     do{
         console.clear();
         jmlData = readlineSync.question('Masukan banyak data:');
@@ -39,12 +42,13 @@ function validasi(callback) {
         }
         console.clear();
     }while(jmlData<=5);
-    
+    //Proses input data ke dalam array
     let dataArray = [];
     for (let i = 0; i < jmlData; i++) {
         let inputArray = readlineSync.questionInt(`Input nilai indeks-${i}:`);
         dataArray.push(inputArray);
     }
+    //Return value
     let result = callback(nilaiAwal, nilaiAkhir, dataArray);
     if (result.length == 0){
         return "Nilai tidak ditemukan";
