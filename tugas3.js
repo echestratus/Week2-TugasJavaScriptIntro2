@@ -41,7 +41,7 @@ function validasi(callback) {
             readlineSync.question('Banyak data harus lebih dari 5 !!!');
         }
         console.clear();
-    }while(jmlData<=5);
+    }while(jmlData<=5 || isNaN(jmlData));
     //Proses input data ke dalam array
     let dataArray = [];
     for (let i = 0; i < jmlData; i++) {
