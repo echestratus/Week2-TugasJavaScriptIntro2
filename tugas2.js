@@ -26,6 +26,7 @@ const searchName = (find, amount, callback) => {
                     console.log(`temp ${temp}`);
                     if(find == temp.toLowerCase()){
                         result.push(i);
+                        break;
                     }
                 }
                 
@@ -33,6 +34,7 @@ const searchName = (find, amount, callback) => {
         } else{
             if(find == i.toLowerCase()){
                 result.push(i);
+                continue;
             }
         }
     }
